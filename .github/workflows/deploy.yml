@@ -1,0 +1,20 @@
+name: Deploy Worker to Puter
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy worker
+        uses: HeyPuter/puter-worker-deploy-action@v1
+        with:
+          worker_name: rey-worker-api             # publishes to my-api.puter.work
+          source_path: worker             # the folder containing your worker
+          entry_file: index.js            # the worker's entry file
+          puter_path: ~/workers/rey-worker-api    # where to store the files on Puter
+          puter_token: ${{ secrets.PUTER_TOKEN }}
