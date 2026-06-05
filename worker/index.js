@@ -1,3 +1,3 @@
 router.get("/", async ({ request, user, params }) => {
-  return "Hello 1";
+  return "Hello 2";
 });
