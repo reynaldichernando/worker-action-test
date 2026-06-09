@@ -16,5 +16,5 @@ jobs:
           worker_name: rey-worker-api
           source_path: worker
           entry_file: index.js
-          puter_path: ~/workers/rey-worker-api
+          puter_path: ~/workers/rey-worker-api/
           puter_token: ${{ secrets.PUTER_TOKEN }}
